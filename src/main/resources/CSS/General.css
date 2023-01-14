@@ -1,0 +1,6 @@
+TextField {
+    -fx-prompt-text-fill: white;
+}
+PasswordField{
+    -fx-prompt-text-fill: white;
+}
