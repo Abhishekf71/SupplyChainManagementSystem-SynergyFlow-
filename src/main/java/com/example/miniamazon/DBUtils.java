@@ -150,5 +150,161 @@ public class DBUtils {
     public static String getUserEmail(){
         return customer_email;
     }
+    // ---------------------------------------------------------------------------ADMIN LOGIN -------------------------------------------------------------------------------------------------
+
+    public static void logInAdmin(ActionEvent event, String email, String password){
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+
+        try {
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/miniamazon","root","123456");
+            preparedStatement = connection.prepareStatement("SELECT admin_password FROM admin WHERE admin_email = ?");
+            preparedStatement.setString(1,email);
+            resultSet = preparedStatement.executeQuery();
+
+            if (!resultSet.isBeforeFirst()){
+                System.out.println("Admin not found in database!");
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setContentText("Admin Not Found / Registered");
+                alert.show();
+            } else {
+                while (resultSet.next()){
+                    String retrievedPassword = resultSet.getString("admin_password");
+
+                    if (retrievedPassword.equals(password)){
+                        changeScene(event, "/Fxml/AfterAdminLoginSuccess.fxml","Dashboard",email,null);
+                    } else {
+                        System.out.println("password did not match");
+                        Alert alert = new Alert(Alert.AlertType.ERROR);
+                        alert.setContentText("The Provided Credentials Are Incorrect!");
+                        alert.show();
+                    }
+                }
+            }
+
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            if (resultSet != null){
+                try {
+                    resultSet.close();
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+            }
+            if (preparedStatement != null){
+                try {
+                    preparedStatement.close();
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+            }
+            if (connection != null){
+                try {
+                    connection.close();
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+    // ------------------------------------------------ ADMIN HOMEPAGE TOTAL PRODUCTS -------------------------------------------------------------------------------------------------------------
+    public static String getAdminHomeDetailsProduct(){
+        Connection connection = null;
+        PreparedStatement psTotalProducts = null;
+        ResultSet resultSet = null;
+        String retrievedTotalProducts = "NA";
+        try {
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/miniamazon","root","123456");
+            psTotalProducts = connection.prepareStatement("SELECT max(product_id) FROM product");
+            resultSet = psTotalProducts.executeQuery();
+
+            if (!resultSet.isBeforeFirst()){
+                System.out.println("Total Products Didn't received !");
+            } else {
+                while (resultSet.next()){
+                    retrievedTotalProducts = resultSet.getString("max(product_id)");
+                }
+            }
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            if (resultSet != null){
+                try {
+                    resultSet.close();
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+            }
+            if (psTotalProducts != null){
+                try {
+                    psTotalProducts.close();
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+            }
+            if (connection != null){
+                try {
+                    connection.close();
+                } catch (Exception e){
+                    e.printStackTrace();
+                }
+            }
+        }
+
+        return retrievedTotalProducts;
+    }
+
+    // ------------------------------------------------ ADMIN HOMEPAGE TOTAL USERS -------------------------------------------------------------------------------------------------------------
+    public static String getAdminHomeUsers(){
+        Connection connection = null;
+        PreparedStatement psTotalUsers = null;
+        ResultSet resultSet = null;
+        String retrievedTotalUsers = "NA";
+        try {
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/miniamazon","root","123456");
+            psTotalUsers = connection.prepareStatement("SELECT max(user_id) FROM users");
+            resultSet = psTotalUsers.executeQuery();
+
+            if (!resultSet.isBeforeFirst()){
+                System.out.println("Total Products Didn't received !");
+            } else {
+                while (resultSet.next()){
+                    retrievedTotalUsers = resultSet.getString("max(user_id)");
+                }
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            if (resultSet != null){
+                try {
+                    resultSet.close();
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+            }
+            if (psTotalUsers != null){
+                try {
+                    psTotalUsers.close();
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+            }
+            if (connection != null){
+                try {
+                    connection.close();
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+            }
+        }
+
+        return retrievedTotalUsers;
+    }
+
+    // ------------------------------------------------------------------------------
 
 }

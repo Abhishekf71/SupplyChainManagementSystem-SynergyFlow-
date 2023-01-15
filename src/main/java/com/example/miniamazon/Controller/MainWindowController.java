@@ -5,16 +5,13 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.scene.input.MouseEvent;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class MainWindowController implements Initializable {
-
     @FXML
     private TextField email_fld;
     @FXML
@@ -23,6 +20,10 @@ public class MainWindowController implements Initializable {
     private Button login_btn;
     @FXML
     private Button sign_up_btn;
+
+    static String account_type;
+
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -46,5 +47,7 @@ public class MainWindowController implements Initializable {
                 }
             }
         });
+
+
     }
 }

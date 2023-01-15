@@ -6,10 +6,9 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.miniamazon.Controller.AfterLoginSuccess">
    <left>
-      <Pane prefHeight="550.0" prefWidth="190.0" style="-fx-background-color: #FED700;" BorderPane.alignment="CENTER">
+      <Pane prefHeight="550.0" prefWidth="220.0" style="-fx-background-color: #FED700;" BorderPane.alignment="CENTER">
          <children>
             <Button fx:id="logout_btn" layoutX="48.0" layoutY="476.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="75.0" style="-fx-cursor: hand;" text="Logout">
                <font>

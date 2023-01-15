@@ -24,7 +24,7 @@ public class AfterLoginSuccess implements Initializable {
         logout_btn.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                DBUtils.changeScene(event,"/Fxml/MainWindow.fxml","Welcome!",null,null);
+                DBUtils.changeScene(event,"/Fxml/BeforeMainWindow.fxml","Welcome!",null,null);
             }
         });
 
