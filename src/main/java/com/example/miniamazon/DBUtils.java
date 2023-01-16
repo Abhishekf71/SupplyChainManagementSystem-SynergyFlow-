@@ -305,6 +305,28 @@ public class DBUtils {
         return retrievedTotalUsers;
     }
 
-    // ------------------------------------------------------------------------------
+    // ------------------------------------------------------------------------- ADD PRODUCTS TO DATABASE -----------------------------------------------------------------------------------------
+    public static void addProducts(ActionEvent event,String productName , String productDescription, String productCategory, String productPrice){
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+
+        try {
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/miniamazon","root","123456");
+            preparedStatement = connection.prepareStatement("INSERT INTO product (product_name, product_description, product_category, product_price) VALUES (?,?,?,?)");
+            preparedStatement.setString(1,productName);
+            preparedStatement.setString(2,productDescription);
+            preparedStatement.setString(3,productCategory);
+            preparedStatement.setString(4,productPrice);
+            preparedStatement.executeUpdate();
+
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setContentText("Product Added");
+            alert.show();
+
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
 
 }
