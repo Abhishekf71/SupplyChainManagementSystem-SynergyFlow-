@@ -42,6 +42,11 @@
                   <Font name="Century" size="13.0" />
                </font>
             </Button>
+            <Button fx:id="admin_delete_btn" layoutX="10.0" layoutY="176.0" mnemonicParsing="false" prefWidth="80.0" style="-fx-cursor: hand;" text="DELETE" translateX="45.0" translateY="40.0">
+               <font>
+                  <Font name="Century" size="13.0" />
+               </font>
+            </Button>
          </children>
       </VBox>
       <VBox prefHeight="500.0" prefWidth="580.0" style="-fx-background-color: #1e90ff;">

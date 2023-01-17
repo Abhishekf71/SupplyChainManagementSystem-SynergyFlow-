@@ -36,6 +36,9 @@ public class AfterAdminLoginSuccessAddController implements Initializable {
     @FXML
     private Button proceed_btn;
 
+    @FXML
+    private Button admin_delete_btn;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
@@ -70,6 +73,13 @@ public class AfterAdminLoginSuccessAddController implements Initializable {
             public void handle(ActionEvent event) {
                 String category = product_category_choice_box.getSelectionModel().getSelectedItem();
                 DBUtils.addProducts(event,product_name_fld.getText(),product_description_area.getText(),category,product_price_fld.getText());
+            }
+        });
+
+        admin_delete_btn.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                DBUtils.changeScene(event,"/Fxml/AdminDeleteTab.fxml","Delete Product",null,null);
             }
         });
 

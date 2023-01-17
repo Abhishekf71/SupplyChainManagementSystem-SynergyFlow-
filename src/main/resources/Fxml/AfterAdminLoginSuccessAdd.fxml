@@ -44,6 +44,11 @@
                   <Font name="Century" size="13.0" />
                </font>
             </Button>
+            <Button fx:id="admin_delete_btn" layoutX="10.0" layoutY="176.0" mnemonicParsing="false" prefWidth="80.0" style="-fx-cursor: hand;" text="DELETE" translateX="45.0" translateY="40.0">
+               <font>
+                  <Font name="Century" size="13.0" />
+               </font>
+            </Button>
          </children>
       </VBox>
       <VBox prefHeight="200.0" prefWidth="580.0" style="-fx-background-color: #1e90ff;">
@@ -55,7 +60,7 @@
             </Label>
             <AnchorPane prefHeight="449.0" prefWidth="580.0" translateY="25.0">
                <children>
-                  <Label layoutX="59.0" layoutY="14.0" prefHeight="29.0" prefWidth="130.0" text=" Name" textFill="WHITE">
+                  <Label layoutX="59.0" layoutY="14.0" prefHeight="29.0" prefWidth="52.0" text=" Name" textFill="WHITE">
                      <font>
                         <Font name="Century" size="16.0" />
                      </font>
@@ -65,19 +70,19 @@
                         <Font name="Century" size="14.0" />
                      </font>
                   </TextField>
-                  <Label layoutX="59.0" layoutY="87.0" prefHeight="30.0" prefWidth="130.0" text=" Description " textFill="WHITE">
+                  <Label layoutX="59.0" layoutY="87.0" prefHeight="30.0" prefWidth="94.0" text=" Description " textFill="WHITE">
                      <font>
                         <Font name="Century" size="16.0" />
                      </font>
                   </Label>
                   <TextArea fx:id="product_description_area" layoutX="176.0" layoutY="67.0" prefHeight="69.0" prefWidth="227.0" />
-                  <Label layoutX="59.0" layoutY="194.0" prefHeight="30.0" prefWidth="130.0" text="Category" textFill="WHITE">
+                  <Label layoutX="59.0" layoutY="194.0" prefHeight="30.0" prefWidth="70.0" text="Category" textFill="WHITE">
                      <font>
                         <Font name="Century" size="16.0" />
                      </font>
                   </Label>
                   <ChoiceBox fx:id="product_category_choice_box" layoutX="176.0" layoutY="196.0" prefHeight="26.0" prefWidth="227.0" />
-                  <Label layoutX="59.0" layoutY="253.0" prefHeight="30.0" prefWidth="130.0" text="Price" textFill="WHITE">
+                  <Label layoutX="59.0" layoutY="253.0" prefHeight="30.0" prefWidth="40.0" text="Price" textFill="WHITE">
                      <font>
                         <Font name="Century" size="16.0" />
                      </font>
@@ -92,6 +97,26 @@
                         <Font name="Century" size="17.0" />
                      </font>
                   </Button>
+                  <Label layoutX="117.0" layoutY="14.0" prefHeight="29.0" prefWidth="52.0" text="*" textFill="RED">
+                     <font>
+                        <Font name="Century" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="150.0" layoutY="87.0" prefHeight="29.0" prefWidth="52.0" text="*" textFill="RED">
+                     <font>
+                        <Font name="Century" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="127.0" layoutY="194.0" prefHeight="29.0" prefWidth="52.0" text="*" textFill="RED">
+                     <font>
+                        <Font name="Century" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="103.0" layoutY="253.0" prefHeight="29.0" prefWidth="52.0" text="*" textFill="RED">
+                     <font>
+                        <Font name="Century" size="16.0" />
+                     </font>
+                  </Label>
                </children>
             </AnchorPane>
          </children>
