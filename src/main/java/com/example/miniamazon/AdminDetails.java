@@ -58,7 +58,7 @@ public class AdminDetails {
 
         return productName;
     }
-
+//    ------------------------------------------------ DELETING PRODUCT FROM DB ----------------------------------------------------------------------------------------------------------------
     public static void deleteProductByID(String id){
         Connection connection = null;
         PreparedStatement preparedStatement = null;
@@ -90,6 +90,54 @@ public class AdminDetails {
                     e.printStackTrace();
                 }
             }
+        }
+    }
+
+    // -------------------------------------------------------------------- FETCHING DETAILS FOR UPDATE WINDOW -----------------------------------------------------------------------------------
+    public static String getProductPriceByID(String id){
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+        String productPrice = null;
+
+        try {
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/miniamazon","root","123456");
+            preparedStatement = connection.prepareStatement("SELECT product_price FROM product WHERE product_id = ?");
+            preparedStatement.setString(1,id);
+            resultSet = preparedStatement.executeQuery();
+
+            if (!resultSet.isBeforeFirst()){
+                System.out.println("Product ID not available!");
+            } else {
+                while (resultSet.next()){
+                    productPrice = resultSet.getString("product_price");
+
+                }
+            }
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return productPrice;
+    }
+
+    //  ----------------------------------------------------------------------------- UPDATING PRODUCT PRICE --------------------------------------------------------------------------------------
+    public static void updateProductPrice(String product_id, String product_price){
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+
+        try {
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/miniamazon","root","123456");
+            preparedStatement = connection.prepareStatement("UPDATE product SET product_price = ? WHERE product_id = ?");
+            preparedStatement.setString(1,product_price);
+            preparedStatement.setString(2,product_id);
+            preparedStatement.executeUpdate();
+
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setContentText("Product ID : " + product_id + " Updated Price :" + product_price);
+            alert.show();
+        }catch (Exception e){
+            e.printStackTrace();
         }
     }
 }

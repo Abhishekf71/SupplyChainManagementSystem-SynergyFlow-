@@ -27,27 +27,27 @@
                   <Font name="Century" size="18.0" />
                </font>
             </Label>
-            <Button fx:id="admin_home_btn" mnemonicParsing="false" prefWidth="80.0" style="-fx-cursor: hand;" text="HOME" translateX="45.0" translateY="10.0">
+            <Button fx:id="admin_home_btn" mnemonicParsing="false" prefWidth="80.0" style="-fx-cursor: hand; -fx-background-radius: 15px; -fx-background-color: #EFEFE4;" text="HOME" translateX="45.0" translateY="10.0">
                <font>
                   <Font name="Century" size="13.0" />
                </font>
             </Button>
-            <Button fx:id="logout_btn" mnemonicParsing="false" prefWidth="80.0" style="-fx-cursor: hand;" text="Logout" translateX="45.0" translateY="310.0">
+            <Button fx:id="logout_btn" mnemonicParsing="false" prefWidth="80.0" style="-fx-cursor: hand; -fx-background-radius: 15px; -fx-background-color: #EFEFE4;" text="Logout" translateX="45.0" translateY="310.0">
                <font>
                   <Font name="Century" size="15.0" />
                </font>
             </Button>
-            <Button fx:id="admin_add_btn" layoutX="10.0" layoutY="123.0" mnemonicParsing="false" prefWidth="80.0" style="-fx-cursor: hand;" text="ADD" translateX="45.0" translateY="10.0">
+            <Button fx:id="admin_add_btn" layoutX="10.0" layoutY="123.0" mnemonicParsing="false" prefWidth="80.0" style="-fx-cursor: hand; -fx-background-color: #01C440; -fx-text-fill: #FFFFFF; -fx-background-radius:15px" text="ADD" translateX="45.0" translateY="10.0">
                <font>
                   <Font name="Century" size="13.0" />
                </font>
             </Button>
-            <Button fx:id="admin_delete_btn" layoutX="10.0" layoutY="176.0" mnemonicParsing="false" prefWidth="80.0" style="-fx-cursor: hand;" text="DELETE" translateX="45.0" translateY="40.0">
+            <Button fx:id="admin_delete_btn" layoutX="10.0" layoutY="176.0" mnemonicParsing="false" prefWidth="80.0" style="-fx-cursor: hand; -fx-background-color: #ff3300; -fx-text-fill: #FFFFFF; -fx-background-radius:15px" text="DELETE" translateX="45.0" translateY="40.0">
                <font>
                   <Font name="Century" size="13.0" />
                </font>
             </Button>
-            <Button fx:id="admin_update_btn" layoutX="10.0" layoutY="200.0" mnemonicParsing="false" prefWidth="80.0" style="-fx-cursor: hand;" text="UPDATE" translateX="44.0" translateY="70.0">
+            <Button fx:id="admin_update_btn" layoutX="10.0" layoutY="200.0" mnemonicParsing="false" prefWidth="80.0" style="-fx-cursor: hand; -fx-background-radius: 15px; -fx-background-color: #E6A91D; -fx-text-fill: #FFFFFF;" text="UPDATE" translateX="44.0" translateY="70.0">
                <font>
                   <Font name="Century" size="13.0" />
                </font>
