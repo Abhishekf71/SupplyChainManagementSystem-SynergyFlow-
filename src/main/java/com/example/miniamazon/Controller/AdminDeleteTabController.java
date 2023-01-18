@@ -39,6 +39,12 @@ public class AdminDeleteTabController implements Initializable {
     @FXML
     private Button fetch_product_btn;
 
+    @FXML
+    private Button delete_product_btn;
+
+    @FXML
+    private Button admin_update_btn;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         logout_btn.setOnAction(new EventHandler<ActionEvent>() {
@@ -80,5 +86,25 @@ public class AdminDeleteTabController implements Initializable {
             }
         });
 
+        delete_product_btn.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                if (product_id_fld.getText().isEmpty()){
+                    Alert alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setContentText("Please Provide Product ID");
+                    alert.show();
+                } else {
+                    AdminDetails.deleteProductByID(product_id_fld.getText());
+
+                }
+            }
+        });
+
+        admin_update_btn.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                DBUtils.changeScene(event,"/Fxml/AdminUpdateTab.fxml","Update Product",null,null);
+            }
+        });
     }
 }

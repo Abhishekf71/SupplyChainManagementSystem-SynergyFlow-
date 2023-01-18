@@ -47,6 +47,11 @@
                   <Font name="Century" size="13.0" />
                </font>
             </Button>
+            <Button fx:id="admin_update_btn" layoutX="10.0" layoutY="200.0" mnemonicParsing="false" prefWidth="80.0" style="-fx-cursor: hand;" text="UPDATE" translateX="44.0" translateY="70.0">
+               <font>
+                  <Font name="Century" size="13.0" />
+               </font>
+            </Button>
          </children>
       </VBox>
       <VBox prefHeight="500.0" prefWidth="580.0" style="-fx-background-color: #1e90ff;">

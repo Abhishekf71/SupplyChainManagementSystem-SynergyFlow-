@@ -39,6 +39,9 @@ public class AfterAdminLoginSuccessAddController implements Initializable {
     @FXML
     private Button admin_delete_btn;
 
+    @FXML
+    private Button admin_update_btn;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
@@ -80,6 +83,13 @@ public class AfterAdminLoginSuccessAddController implements Initializable {
             @Override
             public void handle(ActionEvent event) {
                 DBUtils.changeScene(event,"/Fxml/AdminDeleteTab.fxml","Delete Product",null,null);
+            }
+        });
+
+        admin_update_btn.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                DBUtils.changeScene(event,"/Fxml/AdminUpdateTab.fxml","Update Product",null,null);
             }
         });
 

@@ -34,6 +34,7 @@ public class DBUtils {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setTitle(title);
         stage.setScene(new Scene(root));
+        stage.setResizable(false);
         stage.show();
     }
 
@@ -218,14 +219,14 @@ public class DBUtils {
         String retrievedTotalProducts = "NA";
         try {
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/miniamazon","root","123456");
-            psTotalProducts = connection.prepareStatement("SELECT max(product_id) FROM product");
+            psTotalProducts = connection.prepareStatement("SELECT COUNT(product_id) FROM product;");
             resultSet = psTotalProducts.executeQuery();
 
             if (!resultSet.isBeforeFirst()){
                 System.out.println("Total Products Didn't received !");
             } else {
                 while (resultSet.next()){
-                    retrievedTotalProducts = resultSet.getString("max(product_id)");
+                    retrievedTotalProducts = resultSet.getString("COUNT(product_id)");
                 }
             }
 
@@ -266,14 +267,14 @@ public class DBUtils {
         String retrievedTotalUsers = "NA";
         try {
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/miniamazon","root","123456");
-            psTotalUsers = connection.prepareStatement("SELECT max(user_id) FROM users");
+            psTotalUsers = connection.prepareStatement("SELECT COUNT(user_id) FROM users;");
             resultSet = psTotalUsers.executeQuery();
 
             if (!resultSet.isBeforeFirst()){
                 System.out.println("Total Products Didn't received !");
             } else {
                 while (resultSet.next()){
-                    retrievedTotalUsers = resultSet.getString("max(user_id)");
+                    retrievedTotalUsers = resultSet.getString("COUNT(user_id)");
                 }
             }
         }catch (Exception e){
