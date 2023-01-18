@@ -7,7 +7,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
-import javafx.scene.input.MouseEvent;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -39,7 +38,7 @@ public class BeforeMainWindow implements Initializable {
                 if (account_type.equals("USER")){
                     DBUtils.changeScene(event,"/Fxml/MainWindow.fxml","Log In",null,null);
                 } else {
-                    DBUtils.changeScene(event,"/Fxml/AdminWindow.fxml","Log In",null,null);
+                    DBUtils.changeScene(event, "/Fxml/Admin/AdminWindow.fxml","Log In",null,null);
                 }
             }
         });

@@ -1,4 +1,4 @@
-package com.example.miniamazon.Controller;
+package com.example.miniamazon.Controller.AdminController;
 
 import com.example.miniamazon.DBUtils;
 import javafx.event.ActionEvent;
@@ -59,27 +59,27 @@ public class AfterAdminLoginSuccess implements Initializable {
         admin_home_btn.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                DBUtils.changeScene(event,"/Fxml/AfterAdminLoginSuccess.fxml","Admin Dashboard",null,null);
+                DBUtils.changeScene(event, "/Fxml/Admin/AfterAdminLoginSuccess.fxml","Admin Dashboard",null,null);
             }
         });
 
         admin_add_btn.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                DBUtils.changeScene(event,"/Fxml/AfterAdminLoginSuccessAdd.fxml","Add Products",null,null);
+                DBUtils.changeScene(event, "/Fxml/Admin/AfterAdminLoginSuccessAdd.fxml","Add Products",null,null);
             }
         });
 
         admin_delete_btn.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                DBUtils.changeScene(event,"/Fxml/AdminDeleteTab.fxml","Delete Product",null,null);
+                DBUtils.changeScene(event, "/Fxml/Admin/AdminDeleteTab.fxml","Delete Product",null,null);
             }
         });
         admin_update_btn.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                DBUtils.changeScene(event,"/Fxml/AdminUpdateTab.fxml","Update Product",null,null);
+                DBUtils.changeScene(event, "/Fxml/Admin/AdminUpdateTab.fxml","Update Product",null,null);
             }
         });
     }

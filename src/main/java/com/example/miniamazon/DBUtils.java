@@ -174,7 +174,7 @@ public class DBUtils {
                     String retrievedPassword = resultSet.getString("admin_password");
 
                     if (retrievedPassword.equals(password)){
-                        changeScene(event, "/Fxml/AfterAdminLoginSuccess.fxml","Dashboard",email,null);
+                        changeScene(event, "/Fxml/Admin/AfterAdminLoginSuccess.fxml","Dashboard",email,null);
                     } else {
                         System.out.println("password did not match");
                         Alert alert = new Alert(Alert.AlertType.ERROR);

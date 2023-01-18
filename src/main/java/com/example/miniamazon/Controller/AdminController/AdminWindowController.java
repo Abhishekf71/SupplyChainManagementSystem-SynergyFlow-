@@ -1,4 +1,4 @@
-package com.example.miniamazon.Controller;
+package com.example.miniamazon.Controller.AdminController;
 
 import com.example.miniamazon.DBUtils;
 import javafx.event.ActionEvent;
