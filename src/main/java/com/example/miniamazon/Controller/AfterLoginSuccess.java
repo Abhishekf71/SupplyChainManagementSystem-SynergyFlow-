@@ -1,6 +1,7 @@
 package com.example.miniamazon.Controller;
 
 import com.example.miniamazon.DBUtils;
+import com.example.miniamazon.Orders;
 import com.example.miniamazon.Products;
 import com.example.miniamazon.Users;
 import javafx.collections.ObservableList;
@@ -10,6 +11,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 
 import java.net.URL;
 import java.sql.Connection;
@@ -20,7 +22,7 @@ import java.util.ResourceBundle;
 public class AfterLoginSuccess implements Initializable {
 
     @FXML
-    private TableView<Products> table_product;
+    public TableView<Products> table_product;
 
     @FXML
     private TableColumn<Products, String> col_category;
@@ -60,6 +62,15 @@ public class AfterLoginSuccess implements Initializable {
     @FXML
     private Button search_btn;
 
+
+    @FXML
+    private Button buy_now_btn;
+    Products selected;
+    @FXML
+    void getSelectedProduct(MouseEvent event) {
+         selected = table_product.getSelectionModel().getSelectedItem();
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
@@ -84,6 +95,25 @@ public class AfterLoginSuccess implements Initializable {
                 table_product.setItems(searchable);
             }
         });
+
+        buy_now_btn.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                Products selectedProducts = selected;
+                if (selectedProducts == null){
+                    Alert alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setContentText("Choose a product");
+                    alert.show();
+                } else {
+                    Orders.placeOrder(customer_email_lbl.getText(),selectedProducts);
+                    Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+                    alert.setContentText("Order Placed");
+                    alert.show();
+                }
+
+            }
+        });
+
         logout_btn.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
