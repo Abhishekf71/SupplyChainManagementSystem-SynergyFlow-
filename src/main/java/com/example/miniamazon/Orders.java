@@ -10,7 +10,7 @@ public class Orders {
         PreparedStatement preparedStatement = null;
         try {
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/miniamazon","root","123456");
-            preparedStatement = connection.prepareStatement("INSERT INTO orders (customer_id, product_id) VALUES ((SELECT user_id FROM users WHERE email = ? ),?)");
+            preparedStatement = connection.prepareStatement("INSERT INTO orders (user_id, product_id) VALUES ((SELECT user_id FROM users WHERE email = ? ),?)");
             preparedStatement.setString(1,customer_email);
             preparedStatement.setInt(2,product.getId());
             preparedStatement.executeUpdate();

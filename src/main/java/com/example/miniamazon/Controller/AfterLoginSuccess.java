@@ -47,9 +47,9 @@ public class AfterLoginSuccess implements Initializable {
     ResultSet resultSet = null;
 
     @FXML
-    private Label customer_name_lbl;
+    public Label customer_name_lbl;
     @FXML
-    private Label customer_email_lbl;
+    public Label customer_email_lbl;
     @FXML
     private Button logout_btn;
 
@@ -62,6 +62,8 @@ public class AfterLoginSuccess implements Initializable {
     @FXML
     private Button search_btn;
 
+    @FXML
+    private Button my_order_btn;
 
     @FXML
     private Button buy_now_btn;
@@ -73,6 +75,13 @@ public class AfterLoginSuccess implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        my_order_btn.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                DBUtils.changeScene(event,"/Fxml/MyOrdersWindow.fxml","Orders",null,null);
+            }
+        });
 
         col_id.setCellValueFactory(new PropertyValueFactory<Products,Integer>("Id"));
         col_name.setCellValueFactory(new PropertyValueFactory<Products,String>("Name"));

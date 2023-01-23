@@ -4,12 +4,11 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="573.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.miniamazon.Controller.AfterLoginSuccess">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="573.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.miniamazon.Controller.MyOrdersWindowController">
    <children>
       <VBox prefHeight="574.0" prefWidth="220.0" style="-fx-background-color: #10ADED;">
          <children>
@@ -58,27 +57,13 @@
             </AnchorPane>
          </children>
       </VBox>
-      <TableView fx:id="table_product" layoutX="220.0" layoutY="7.0" onMouseClicked="#getSelectedProduct" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="220.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
+      <TableView fx:id="orders_table" layoutX="220.0" layoutY="3.0" prefHeight="573.0" prefWidth="638.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="220.0" AnchorPane.rightAnchor="342.0" AnchorPane.topAnchor="0.0">
         <columns>
-          <TableColumn fx:id="col_id" prefWidth="77.59999084472656" text="Product ID" />
-          <TableColumn fx:id="col_name" prefWidth="285.6000061035156" text=" Name" />
-            <TableColumn fx:id="col_description" prefWidth="340.800048828125" text="Description" />
+          <TableColumn fx:id="col_order_id" prefWidth="77.59999084472656" text="Order ID" />
+          <TableColumn fx:id="col_name" prefWidth="285.6000061035156" text="Name" />
             <TableColumn fx:id="col_category" prefWidth="164.00006103515625" text="Category" />
-            <TableColumn fx:id="col_price" minWidth="0.0" prefWidth="107.199951171875" text="Price" />
+            <TableColumn fx:id="col_price" prefWidth="107.199951171875" text="Price" />
         </columns>
       </TableView>
-      <AnchorPane layoutX="229.0" layoutY="-86.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #EFEFE4;" AnchorPane.bottomAnchor="524.0" AnchorPane.leftAnchor="221.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <children>
-            <TextField fx:id="search_box_fld" alignment="BOTTOM_LEFT" layoutX="75.0" layoutY="11.0" prefHeight="26.0" prefWidth="528.0" style="-fx-background-radius: 10px;" AnchorPane.leftAnchor="75.0" AnchorPane.rightAnchor="376.0" />
-            <Button fx:id="search_btn" layoutX="617.0" layoutY="11.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="70.0" style="-fx-cursor: hand;" text="Search">
-               <font>
-                  <Font name="Century" size="12.0" />
-               </font></Button>
-            <Button fx:id="buy_now_btn" layoutX="703.0" layoutY="11.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="70.0" style="-fx-cursor: hand; -fx-background-color: #01C440; -fx-text-fill: #FFFFFF;" text="Buy Now">
-               <font>
-                  <Font name="Century" size="12.0" />
-               </font>
-            </Button>
-         </children></AnchorPane>
    </children>
 </AnchorPane>

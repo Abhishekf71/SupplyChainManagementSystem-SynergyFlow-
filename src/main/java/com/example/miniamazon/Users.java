@@ -66,4 +66,27 @@ public class Users {
 
         return list;
     }
+
+
+    public static ObservableList<UserOrder> getOrderDetails(String email){
+        Connection connection = null;
+        ObservableList<UserOrder> list = FXCollections.observableArrayList();
+        try {
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/miniamazon","root","123456");
+            PreparedStatement preparedStatement = connection.prepareStatement("SELECT o.order_id, p.product_name , p.product_category, p.product_price FROM orders as o \n" +
+                    "INNER JOIN product as p ON o.product_id = p.product_id WHERE user_id = (SELECT user_id FROM users WHERE email = ?);");
+            preparedStatement.setString(1,email);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()){
+                list.add(new UserOrder(Integer.parseInt(
+                        resultSet.getString("order_id")),
+                        resultSet.getString("product_name"),
+                        resultSet.getString("product_category"),
+                        resultSet.getString("product_price")));
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return list;
+    }
 }
