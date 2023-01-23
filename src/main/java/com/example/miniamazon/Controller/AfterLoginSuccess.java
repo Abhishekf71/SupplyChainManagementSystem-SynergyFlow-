@@ -38,6 +38,7 @@ public class AfterLoginSuccess implements Initializable {
     private TableColumn<Products, Integer> col_price;
 
     ObservableList<Products> list;
+    ObservableList<Products> searchable;
     int index = -1;
     Connection connection = null;
     PreparedStatement preparedStatement = null;
@@ -53,6 +54,12 @@ public class AfterLoginSuccess implements Initializable {
     @FXML
     private Button user_home_btn;
 
+    @FXML
+    private TextField search_box_fld;
+
+    @FXML
+    private Button search_btn;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
@@ -62,8 +69,21 @@ public class AfterLoginSuccess implements Initializable {
         col_category.setCellValueFactory(new PropertyValueFactory<Products,String>("Category"));
         col_price.setCellValueFactory(new PropertyValueFactory<Products,Integer>("Price"));
 
+        table_product.setFixedCellSize(70.0);
+
+
         list = Users.getDataProducts();
+
+
         table_product.setItems(list);
+
+        search_btn.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                searchable = Users.getDataProductsBySearch(search_box_fld.getText().toLowerCase());
+                table_product.setItems(searchable);
+            }
+        });
         logout_btn.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {

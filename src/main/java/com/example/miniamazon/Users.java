@@ -37,4 +37,33 @@ public class Users {
 
         return list;
     }
+
+    public static ObservableList<Products> getDataProductsBySearch(String word){
+        Connection connection = null;
+        try {
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/miniamazon","root","123456");
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        ObservableList<Products> list = FXCollections.observableArrayList();
+        try {
+            String statement = String.format("SELECT * FROM product WHERE product_name LIKE '%%%s%%' ",word);
+            PreparedStatement preparedStatement = connection.prepareStatement(statement);
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            while (resultSet.next()){
+                list.add(new Products(Integer.parseInt(resultSet.getString("product_id")),
+                        resultSet.getString("product_name"),
+                        resultSet.getString("product_description"),
+                        resultSet.getString("product_category"),
+                        resultSet.getInt("product_price")));
+
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+        return list;
+    }
 }
