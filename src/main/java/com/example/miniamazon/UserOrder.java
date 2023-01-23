@@ -1,8 +1,8 @@
 package com.example.miniamazon;
 
 public class UserOrder {
-    int id;
-    String name,category,price;
+    int id,price;
+    String name,category;
 
     public int getId() {
         return id;
@@ -28,15 +28,15 @@ public class UserOrder {
         this.category = category;
     }
 
-    public String getPrice() {
+    public int getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 
-    public UserOrder(int id, String name, String category, String price) {
+    public UserOrder(int id, String name, String category, int price) {
         this.id = id;
         this.name = name;
         this.category = category;

@@ -1,4 +1,4 @@
-package com.example.miniamazon.Controller;
+package com.example.miniamazon.Controller.UserController;
 
 import com.example.miniamazon.DBUtils;
 import com.example.miniamazon.UserOrder;
@@ -46,7 +46,7 @@ public class MyOrdersWindowController implements Initializable {
     private TableColumn<UserOrder, Integer> col_order_id;
 
     @FXML
-    private TableColumn<UserOrder,String> col_price;
+    private TableColumn<UserOrder,Integer> col_price;
 
     ObservableList<UserOrder> list;
 
@@ -62,7 +62,7 @@ public class MyOrdersWindowController implements Initializable {
         col_order_id.setCellValueFactory(new PropertyValueFactory<UserOrder,Integer>("id"));
         col_name.setCellValueFactory(new PropertyValueFactory<UserOrder,String>("Name"));
         col_category.setCellValueFactory(new PropertyValueFactory<UserOrder,String>("Category"));
-        col_price.setCellValueFactory(new PropertyValueFactory<UserOrder,String>("Price"));
+        col_price.setCellValueFactory(new PropertyValueFactory<UserOrder,Integer>("Price"));
 
         list = Users.getOrderDetails(DBUtils.getUserEmail());
         orders_table.setFixedCellSize(70.0);
@@ -71,7 +71,7 @@ public class MyOrdersWindowController implements Initializable {
         user_home_btn.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                DBUtils.changeScene(event,"/Fxml/AfterLoginSuccess.fxml","Welcome ",null,null);
+                DBUtils.changeScene(event, "/Fxml/Users/AfterLoginSuccess.fxml","Welcome ",null,null);
             }
         });
 
@@ -88,7 +88,7 @@ public class MyOrdersWindowController implements Initializable {
         my_order_btn.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                DBUtils.changeScene(event,"/Fxml/MyOrdersWindow.fxml","Orders",null,null);
+                DBUtils.changeScene(event, "/Fxml/Users/MyOrdersWindow.fxml","Orders",null,null);
             }
         });
 

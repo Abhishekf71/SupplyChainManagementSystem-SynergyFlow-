@@ -1,7 +1,5 @@
 package com.example.miniamazon;
 
-import com.example.miniamazon.Controller.AfterLoginSuccess;
-
 public class Products {
     int id,price;
     String name,description,category;

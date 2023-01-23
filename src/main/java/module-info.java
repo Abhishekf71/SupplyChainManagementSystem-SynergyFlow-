@@ -8,4 +8,5 @@ module com.example.miniamazon {
     opens com.example.miniamazon.Controller;
     exports com.example.miniamazon;
     opens com.example.miniamazon.Controller.AdminController;
+    opens com.example.miniamazon.Controller.UserController;
 }

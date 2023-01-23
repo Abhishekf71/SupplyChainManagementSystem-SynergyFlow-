@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="573.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.miniamazon.Controller.MyOrdersWindowController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="573.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.miniamazon.Controller.UserController.MyOrdersWindowController">
    <children>
       <VBox prefHeight="574.0" prefWidth="220.0" style="-fx-background-color: #10ADED;">
          <children>
@@ -38,17 +38,17 @@
             </AnchorPane>
             <AnchorPane prefHeight="374.0" prefWidth="220.0">
                <children>
-                  <Button fx:id="logout_btn" layoutX="67.0" layoutY="314.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="85.0" style="-fx-background-color: #EFEFE4; -fx-cursor: hand; -fx-background-radius: 15px;" text="Logout">
+                  <Button fx:id="logout_btn" layoutX="67.0" layoutY="314.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="85.0" style="-fx-background-color: #182531; -fx-cursor: hand; -fx-background-radius: 15px; -fx-text-fill: #FFFFFF;" text="Logout">
+                     <font>
+                        <Font name="Century" size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="user_home_btn" layoutX="54.0" layoutY="14.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="110.0" style="-fx-background-color: #335379; -fx-cursor: hand; -fx-background-radius: 15px; -fx-text-fill: #FFFFFF;" text="Home">
                      <font>
                         <Font name="Century" size="15.0" />
                      </font>
                   </Button>
-                  <Button fx:id="user_home_btn" layoutX="54.0" layoutY="14.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="110.0" style="-fx-background-color: #EFEFE4; -fx-cursor: hand; -fx-background-radius: 15px;" text="Home">
-                     <font>
-                        <Font name="Century" size="15.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="my_order_btn" layoutX="54.0" layoutY="71.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="110.0" style="-fx-background-color: #EFEFE4; -fx-cursor: hand; -fx-background-radius: 15px;" text="My Orders">
+                  <Button fx:id="my_order_btn" layoutX="54.0" layoutY="71.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="110.0" style="-fx-background-color: #335379; -fx-cursor: hand; -fx-background-radius: 15px; -fx-text-fill: #FFFFFF;" text="My Orders">
                      <font>
                         <Font name="Century" size="15.0" />
                      </font>

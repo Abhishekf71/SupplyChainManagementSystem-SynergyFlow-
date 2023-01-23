@@ -29,6 +29,11 @@
                   <Font name="Century" size="16.0" />
                </font>
             </Label>
+            <Label layoutX="21.0" layoutY="72.0" style="-fx-text-fill: #1526D7;" text="SynergyFlow" underline="true">
+               <font>
+                  <Font name="Century" size="26.0" />
+               </font>
+            </Label>
          </children></AnchorPane>
       <AnchorPane prefHeight="400.0" prefWidth="401.0" style="-fx-background-color: #10ADED;">
          <children>

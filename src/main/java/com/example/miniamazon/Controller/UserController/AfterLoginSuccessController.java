@@ -1,4 +1,4 @@
-package com.example.miniamazon.Controller;
+package com.example.miniamazon.Controller.UserController;
 
 import com.example.miniamazon.DBUtils;
 import com.example.miniamazon.Orders;
@@ -19,7 +19,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ResourceBundle;
 
-public class AfterLoginSuccess implements Initializable {
+public class AfterLoginSuccessController implements Initializable {
 
     @FXML
     public TableView<Products> table_product;
@@ -79,7 +79,7 @@ public class AfterLoginSuccess implements Initializable {
         my_order_btn.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                DBUtils.changeScene(event,"/Fxml/MyOrdersWindow.fxml","Orders",null,null);
+                DBUtils.changeScene(event, "/Fxml/Users/MyOrdersWindow.fxml","Orders",null,null);
             }
         });
 
@@ -136,7 +136,7 @@ public class AfterLoginSuccess implements Initializable {
         user_home_btn.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                DBUtils.changeScene(event,"/Fxml/AfterLoginSuccess.fxml","Welcome " + DBUtils.getUserName(),null,null);
+                DBUtils.changeScene(event, "/Fxml/Users/AfterLoginSuccess.fxml","Welcome " + DBUtils.getUserName(),null,null);
             }
         });
 

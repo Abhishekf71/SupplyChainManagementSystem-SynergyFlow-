@@ -82,7 +82,7 @@ public class Users {
                         resultSet.getString("order_id")),
                         resultSet.getString("product_name"),
                         resultSet.getString("product_category"),
-                        resultSet.getString("product_price")));
+                        resultSet.getInt("product_price")));
             }
         }catch (Exception e){
             e.printStackTrace();

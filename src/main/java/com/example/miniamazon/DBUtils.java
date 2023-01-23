@@ -107,7 +107,7 @@ public class DBUtils {
                         alert.show();
                         customer_name = retrievedName;
                         customer_email = email;
-                        changeScene(event,"/Fxml/AfterLoginSuccess.fxml","Dashboard",email,null);
+                        changeScene(event, "/Fxml/Users/AfterLoginSuccess.fxml","Dashboard",email,null);
                     } else {
                         System.out.println("password did not match");
                         Alert alert = new Alert(Alert.AlertType.ERROR);
