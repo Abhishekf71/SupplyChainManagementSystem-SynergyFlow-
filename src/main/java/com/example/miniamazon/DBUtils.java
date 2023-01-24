@@ -61,21 +61,6 @@ public class DBUtils {
 
         }catch (Exception e){
             e.printStackTrace();
-        }finally {
-            if (psInsert != null){
-                try {
-                    psInsert.close();
-                } catch (Exception e){
-                    e.printStackTrace();
-                }
-            }
-            if (connection != null){
-                try {
-                    connection.close();
-                } catch (Exception e){
-                    e.printStackTrace();
-                }
-            }
         }
     }
 
@@ -118,28 +103,6 @@ public class DBUtils {
             }
         }catch (Exception e){
             e.printStackTrace();
-        }finally {
-            if (resultSet != null){
-                try {
-                    resultSet.close();
-                } catch (Exception e){
-                    e.printStackTrace();
-                }
-            }
-            if (preparedStatement != null){
-                try {
-                    preparedStatement.close();
-                }catch (Exception e){
-                    e.printStackTrace();
-                }
-            }
-            if (connection != null){
-                try {
-                    connection.close();
-                } catch (Exception e){
-                    e.printStackTrace();
-                }
-            }
         }
     }
 
@@ -187,28 +150,6 @@ public class DBUtils {
 
         }catch (Exception e){
             e.printStackTrace();
-        }finally {
-            if (resultSet != null){
-                try {
-                    resultSet.close();
-                }catch (Exception e){
-                    e.printStackTrace();
-                }
-            }
-            if (preparedStatement != null){
-                try {
-                    preparedStatement.close();
-                }catch (Exception e){
-                    e.printStackTrace();
-                }
-            }
-            if (connection != null){
-                try {
-                    connection.close();
-                }catch (Exception e){
-                    e.printStackTrace();
-                }
-            }
         }
     }
     // ------------------------------------------------ ADMIN HOMEPAGE TOTAL PRODUCTS -------------------------------------------------------------------------------------------------------------
@@ -232,28 +173,6 @@ public class DBUtils {
 
         }catch (Exception e){
             e.printStackTrace();
-        }finally {
-            if (resultSet != null){
-                try {
-                    resultSet.close();
-                }catch (Exception e){
-                    e.printStackTrace();
-                }
-            }
-            if (psTotalProducts != null){
-                try {
-                    psTotalProducts.close();
-                }catch (Exception e){
-                    e.printStackTrace();
-                }
-            }
-            if (connection != null){
-                try {
-                    connection.close();
-                } catch (Exception e){
-                    e.printStackTrace();
-                }
-            }
         }
 
         return retrievedTotalProducts;
@@ -279,28 +198,6 @@ public class DBUtils {
             }
         }catch (Exception e){
             e.printStackTrace();
-        }finally {
-            if (resultSet != null){
-                try {
-                    resultSet.close();
-                }catch (Exception e){
-                    e.printStackTrace();
-                }
-            }
-            if (psTotalUsers != null){
-                try {
-                    psTotalUsers.close();
-                }catch (Exception e){
-                    e.printStackTrace();
-                }
-            }
-            if (connection != null){
-                try {
-                    connection.close();
-                }catch (Exception e){
-                    e.printStackTrace();
-                }
-            }
         }
 
         return retrievedTotalUsers;

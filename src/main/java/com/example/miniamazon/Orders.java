@@ -5,6 +5,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 
 public class Orders {
+
+    // ------------------------------------------------------ When a user selects a product and try to buy particular product below method will place an order taking various parameters---------
     public static void placeOrder(String customer_email, Products product){
         Connection connection = null;
         PreparedStatement preparedStatement = null;

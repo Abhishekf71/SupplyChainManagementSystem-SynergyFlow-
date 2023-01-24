@@ -10,7 +10,7 @@ import java.sql.ResultSet;
 
 public class Users {
 
-
+    // ------------------------------------------------------ Displays all available products to existing as well as new users --------------------------------------------------------------------
     public static ObservableList<Products> getDataProducts(){
         Connection connection = null;
         try {
@@ -38,6 +38,7 @@ public class Users {
         return list;
     }
 
+    // ------------------------------------------------------ Displays products searched by USER --------------------------------------------------------------------
     public static ObservableList<Products> getDataProductsBySearch(String word){
         Connection connection = null;
         try {
@@ -67,7 +68,7 @@ public class Users {
         return list;
     }
 
-
+    // ------------------------------------------------------ Displays the products which USER has placed orders  --------------------------------------------------------------------
     public static ObservableList<UserOrder> getOrderDetails(String email){
         Connection connection = null;
         ObservableList<UserOrder> list = FXCollections.observableArrayList();
