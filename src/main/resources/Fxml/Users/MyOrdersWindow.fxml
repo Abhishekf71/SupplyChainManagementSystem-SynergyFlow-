@@ -57,13 +57,23 @@
             </AnchorPane>
          </children>
       </VBox>
-      <TableView fx:id="orders_table" layoutX="220.0" layoutY="3.0" prefHeight="573.0" prefWidth="638.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="220.0" AnchorPane.rightAnchor="342.0" AnchorPane.topAnchor="0.0">
+      <TableView fx:id="orders_table" layoutX="220.0" layoutY="50.0" prefHeight="523.0" prefWidth="980.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="220.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
         <columns>
           <TableColumn fx:id="col_order_id" prefWidth="77.59999084472656" text="Order ID" />
           <TableColumn fx:id="col_name" prefWidth="285.6000061035156" text="Name" />
+            <TableColumn fx:id="col_description" prefWidth="340.800048828125" text="Description" />
             <TableColumn fx:id="col_category" prefWidth="164.00006103515625" text="Category" />
             <TableColumn fx:id="col_price" prefWidth="107.199951171875" text="Price" />
         </columns>
       </TableView>
+      <AnchorPane layoutX="289.0" layoutY="-1.0" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #EFEFE4;" AnchorPane.bottomAnchor="523.6" AnchorPane.leftAnchor="220.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label layoutX="443.0" layoutY="6.0" text="Orders" textFill="#080808" underline="true">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

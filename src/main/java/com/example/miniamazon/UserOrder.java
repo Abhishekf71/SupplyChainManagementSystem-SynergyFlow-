@@ -2,7 +2,15 @@ package com.example.miniamazon;
 
 public class UserOrder {
     int id,price;
-    String name,category;
+    String name,category,description;
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
     public int getId() {
         return id;
@@ -36,10 +44,12 @@ public class UserOrder {
         this.price = price;
     }
 
-    public UserOrder(int id, String name, String category, int price) {
+
+    public UserOrder(int id, int price, String name, String category, String description) {
         this.id = id;
+        this.price = price;
         this.name = name;
         this.category = category;
-        this.price = price;
+        this.description = description;
     }
 }

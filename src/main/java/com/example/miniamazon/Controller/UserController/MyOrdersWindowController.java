@@ -48,6 +48,9 @@ public class MyOrdersWindowController implements Initializable {
     @FXML
     private TableColumn<UserOrder,Integer> col_price;
 
+    @FXML
+    private TableColumn<UserOrder, String> col_description;
+
     ObservableList<UserOrder> list;
 
     int index = -1;
@@ -61,6 +64,7 @@ public class MyOrdersWindowController implements Initializable {
 
         col_order_id.setCellValueFactory(new PropertyValueFactory<UserOrder,Integer>("id"));
         col_name.setCellValueFactory(new PropertyValueFactory<UserOrder,String>("Name"));
+        col_description.setCellValueFactory(new PropertyValueFactory<UserOrder,String>("Description"));
         col_category.setCellValueFactory(new PropertyValueFactory<UserOrder,String>("Category"));
         col_price.setCellValueFactory(new PropertyValueFactory<UserOrder,Integer>("Price"));
 
